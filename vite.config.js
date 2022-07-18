@@ -1,7 +1,11 @@
-const { createVuePlugin } = require('vite-plugin-vue2');
+import { defineConfig } from 'vite'
+import { createVuePlugin } from 'vite-plugin-vue2';
 
-module.exports = {
-  plugins: [createVuePlugin()],
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [
+    createVuePlugin(),
+  ],
   resolve: {
     alias: {
       '~': '../src'
@@ -14,4 +18,4 @@ module.exports = {
     //   'test/setup.js'
     // ]
   }
-};
+})

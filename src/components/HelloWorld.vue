@@ -2,9 +2,6 @@
   <div>
     <h1>{{ msg }}</h1>
     <button @click="count++">count is: {{ count }}</button>
-    <slot name="footer" v-bind="{ count, x: count + 10 }">
-      default footer
-    </slot>
   </div>
 </template>
 

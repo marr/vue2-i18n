@@ -4,11 +4,7 @@
       alt="Vue logo"
       src="./assets/logo.png"
     />
-    <HelloWorld :msg="$t('message.other')">
-      <template #footer="{ count }">
-        <p>I am {{ count }} foot</p>
-      </template>
-    </HelloWorld>
+    <HelloWorld :msg="$t('message.other')" />
     <HelloI18n />
   </div>
 </template>
@@ -21,15 +17,17 @@ export default {
     HelloWorld,
     HelloI18n
   },
+  
   i18n: {
     messages: {
       ja: {
-        'message.hello': 'Konnichiwa', // never reaches the child component
-        'message.other': 'kampai'
+        message: {
+          other: 'HIII'
+        }
       }
     }
   }
-};
+}
 </script>
 
 <style>
