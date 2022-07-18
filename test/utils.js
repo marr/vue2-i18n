@@ -6,7 +6,9 @@ import {
 import i18n from '../i18n';
 
 export function mount (component, opts = {}) {
-    return vtuMount(component, { ...opts, i18n });
+    const wrapper = vtuMount(component, { ...opts, i18n });
+    wrapper.i18n = i18n;
+    return wrapper;
 }
 
 export function shallowMount (component, opts = {}) {

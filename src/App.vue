@@ -24,7 +24,7 @@ export default {
   i18n: {
     messages: {
       ja: {
-        'message.hello': 'Konnichiwa',
+        'message.hello': 'Konnichiwa', // never reaches the child component
         'message.other': 'kampai'
       }
     }
