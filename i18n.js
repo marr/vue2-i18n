@@ -1,17 +1,19 @@
 import Vue from 'vue';
-import VueI18n from "vue-i18n";
+import VueI18n from 'vue-i18n';
+import { createI18n } from "vue-i18n-bridge";
 
-Vue.use(VueI18n);
+Vue.use(VueI18n, { bridge: true });
 
-export default new VueI18n({
-    locale: 'ja',
+export default new createI18n({
+    legacy: false,
+    locale: 'en',
     messages: {
         en: {
-            'message.hello': 'Hello, i18n!'
+            'message.hello': 'Hello, i18n!',
+            'message.cheers': '🍻 Cheers'
         },
         ja: {
             'message.hello': 'こんにちは、世界',
-            'message.other': 'x'
         }
     }
-})
+}, VueI18n);
