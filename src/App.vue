@@ -4,9 +4,10 @@
       alt="Vue logo"
       src="./assets/logo.png"
     />
-    <HelloWorld :msg="t('message.cheers')" />
+    <HelloWorld :msg="$t('message.cheers')" />
+    <HelloWorld :msg="$t('message.hello')" />
     <HelloI18n @change="changeLocale" />
-    {{ locale }}
+    {{ this.$i18n.locale }}
   </div>
 </template>
 
@@ -22,21 +23,21 @@ export default {
 
   methods: {
     changeLocale: function () {
-      this.locale = this.locale === 'en' ? 'ja' : 'en'
+      this.$i18n.locale = this.$i18n.locale === 'en' ? 'ja' : 'en'
     }
   },
-  
+
   setup() {
-    const { t, locale } = useI18n({
+    useI18n({
       messages: {
         ja: {
           message: {
             cheers: '乾杯'
           }
         }
-      }
-    })
-    return { t, locale }
+      },
+      useScope: 'global'
+    });
   }
 }
 </script>

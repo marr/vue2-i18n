@@ -14,6 +14,7 @@ export default new createI18n({
         },
         ja: {
             'message.hello': 'こんにちは、世界',
+            'message.cheers': '👻'
         }
-    }
+    },
 }, VueI18n);
